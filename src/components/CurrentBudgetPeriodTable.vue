@@ -1,8 +1,7 @@
 <template>
     <b-card
         tag="article"
-        style="max-width: 70%"
-        header="Current Week Budget"
+        header="Current Budget Period"
         border-variant="dark"
     >
         <b-table striped hover 
@@ -15,8 +14,9 @@
 
 <script>
 import { mapGetters } from "vuex";
+
 export default {
-  name: "WeeklyBudget",
+  name: "CurrentBudgetPeriodTable",
   computed: {
     ...mapGetters(["currentUser", "isAuthenticated"])
   },

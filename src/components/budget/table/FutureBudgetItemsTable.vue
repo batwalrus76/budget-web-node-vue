@@ -1,12 +1,13 @@
 <template>
     <b-card
-            header="Accounts"
+            header="Future Budget Items"
             tag="article"
             border-variant="dark"
+            style="max-width: 100%"
     >
-
         <b-table striped hover
-                 :items="accounts"
+                 responsive
+                 :items="futureBudgetItems"
                  :head-variant="headVariant"
                  :table-variant="tableVariant"></b-table>
     </b-card>
@@ -14,15 +15,13 @@
 
 <script>
 	export default {
-		name: "AccountsTable",
-        data() {
+		name: "FutureBudgetItemsTable",
+        props: ['futureBudgetItems', 'headVariant', 'tableVariant'],
+		data() {
 			return {
-		        accounts: [
-			        {name: 'checkingAccount', balance: 500.00},
-			        {name: 'savingsAccount', balance: 500.00}
-		        ]
-	        }
-        }
+
+			}
+		}
 	}
 </script>
 

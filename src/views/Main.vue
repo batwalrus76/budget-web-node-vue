@@ -1,69 +1,57 @@
 <template>
     <div>
-
-
         <b-container>
             <b-card-group style="max-width:100%;">
-                <CurrentBudgetPeriodTable style="max-width: 70%"></CurrentBudgetPeriodTable>
-                <AccountsTable style="max-width: 30%"></AccountsTable>
+                <CurrentBudgetPeriodTable v-bind:currentBudgetItems="budgetItems"
+                                          style="max-width: 70%"></CurrentBudgetPeriodTable>
+                <AccountsTable v-bind:accounts="accounts"
+                               style="max-width: 30%"></AccountsTable>
             </b-card-group>
             <b-card-group style="max-width:100%; max-height:25%;">
-                <EditCreateBudgetItem style="max-width: 50%"></EditCreateBudgetItem>
-                <b-card
-                        header="Past Due Budget Items"
-                        border-variant="dark"
-                        tag="article"
-                >
-                    <b-table striped hover
-                             responsive
-                             :items="budgetItems"
-                             :head-variant="headVariant"
-                             :table-variant="tableVariant"></b-table>
-                </b-card>
+                <EditCreateBudgetItem v-bind:accounts="accounts"
+                                      v-bind:selectedAccount="selectedAccount"
+                                      style="max-width: 50%"></EditCreateBudgetItem>
+                <PastDueBudgetItemsTable v-bind:pastDueBudgetItems="budgetItems"
+                                         style="max-width: 50%"></PastDueBudgetItemsTable>
             </b-card-group>
-            <b-card-group>
-                <b-card
-                        header="Future Budget Items"
-                        tag="article"
-                        border-variant="dark"
-                        style="max-width: 100%"
-                >
-                    <b-table striped hover
-                             responsive
-                             :items="budgetItems"
-                             :head-variant="headVariant"
-                             :table-variant="tableVariant"></b-table>
-                </b-card>
-            </b-card-group>
+            <FutureBudgetItemsTable v-bind:futureBudgetItems="budgetItems"
+                                    style="max-width: 100%"></FutureBudgetItemsTable>
         </b-container>
     </div>
 </template>
 
 <script>
 
-	import CurrentBudgetPeriodTable from "@/components/CurrentBudgetPeriodTable"
-	import AccountsTable from "@/components/AccountsTable"
-    import EditCreateBudgetItem from "@/components/EditCreateBudgetItem"
+	import CurrentBudgetPeriodTable from "@/components/budget/table/CurrentBudgetPeriodTable"
+    import PastDueBudgetItemsTable from "@/components/budget/table/PastDueBudgetItemsTable"
+    import FutureBudgetItemsTable from "@/components/budget/table/FutureBudgetItemsTable"
+    import EditCreateBudgetItem from "@/components/budget/EditCreateBudgetItem"
+	import AccountsTable from "@/components/account/AccountsTable"
 
 	export default {
 		name: 'app',
 		components: {
 			CurrentBudgetPeriodTable,
 			AccountsTable,
-            EditCreateBudgetItem
+            EditCreateBudgetItem,
+            PastDueBudgetItemsTable,
+            FutureBudgetItemsTable
 		},
 		data() {
 			return {
-				budgetItems: [
-					{age: 40, first_name: 'Dickerson', last_name: 'Macdonald'},
-					{age: 21, first_name: 'Larsen', last_name: 'Shaw'},
-					{age: 89, first_name: 'Geneva', last_name: 'Wilson'},
-					{age: 38, first_name: 'Jami', last_name: 'Carney'}
-				],
-				headVariant: "dark",
-				tableVariant: "secondary",
-				recurring: false,
-				recurringPeriod: 1
+				selectedAccount: null,
+                accounts: [
+                    {name: 'checkingAccount', balance: 500.00},
+                    {name: 'savingsAccount', balance: 500.00}
+                ],
+                budgetItems: [
+                    { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+                    { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+                    { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+                    { age: 38, first_name: 'Jami', last_name: 'Carney' }
+                ],
+                headVariant: "dark",
+                tableVariant: "secondary"
 			}
 		},
 		methods: {}

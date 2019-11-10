@@ -6,7 +6,8 @@
     >
         <b-form-group>
             account:
-            <b-form-select v-model="account" :options="accounts"></b-form-select>
+            <b-form-select v-model="selectedAccount" :options="accounts"
+                           text-field="name" value-field="name"></b-form-select>
         </b-form-group>
         <b-form-group>
             amount: $
@@ -20,7 +21,7 @@
             <b-form-checkbox v-model="recurring" value="true" unchecked-value="false"> Recurring
             </b-form-checkbox>
         </b-form-group>
-        <b-form-group v-show="recurring" v-hide="!recurring">
+        <b-form-group v-show="recurring">
             <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="1">Weekly</b-form-radio>
             <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="2">Biweekly
             </b-form-radio>
@@ -31,15 +32,15 @@
 <script>
 	export default {
 		name: "EditCreateBudgetItem",
-      data () {
+		props: ['accounts','selectedAccount'],
+		data () {
 			return {
-
-							accounts: [
-								{name: 'checkingAccount', balance: 500.00},
-								{name: 'savingsAccount', balance: 500.00}
-							]
-            }
-      }
+				dueDate: "11-01-2019",
+				amount: 0.0,
+				recurring: true,
+				recurringPeriod: 1
+			}
+		}
 	}
 </script>
 

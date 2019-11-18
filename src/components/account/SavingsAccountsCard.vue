@@ -1,22 +1,17 @@
 <template>
     <b-card
-            header="Accounts"
+            header="Savings Accounts"
             tag="article"
             border-variant="dark"
     >
-
-        <b-table striped hover :items="accounts"></b-table>
+        <b-table striped hover :items="savingsAccounts"></b-table>
     </b-card>
 </template>
 
 <script>
 	export default {
-		name: "AccountsTable",
-        props: ['accounts'],
-		data() {
-			return {
-			}
-		}
+		name: "SavingsAccountsCard",
+        props: ['savingsAccounts']
 	}
 </script>
 

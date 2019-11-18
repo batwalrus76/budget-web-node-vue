@@ -4,28 +4,37 @@
             tag="article"
             border-variant="dark"
     >
-        <b-form-group>
-            account:
-            <b-form-select v-model="selectedAccount" :options="accounts"
-                           text-field="name" value-field="name"></b-form-select>
-        </b-form-group>
-        <b-form-group>
-            amount: $
-            <b-form-input v-model="amount" placeholder="0.00"></b-form-input>
-        </b-form-group>
-        <b-form-group>
-            Due Date:
-            <b-form-input v-model="dueDate" placeholder="MM-dd-YYYY"></b-form-input>
-        </b-form-group>
-        <b-form-group>
-            <b-form-checkbox v-model="recurring" value="true" unchecked-value="false"> Recurring
-            </b-form-checkbox>
-        </b-form-group>
-        <b-form-group v-show="recurring">
-            <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="1">Weekly</b-form-radio>
-            <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="2">Biweekly
-            </b-form-radio>
-        </b-form-group>
+        <b-container>
+            <b-row>
+                <b-col>account:</b-col>
+                <b-col>
+                    <b-form-select v-model="selectedAccount" :options="accounts"
+                                      text-field="name" value-field="name"></b-form-select>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col>amount: $</b-col>
+                <b-col>
+                    <b-form-input v-model="amount" placeholder="0.00"></b-form-input>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col>Due Date: </b-col>
+                <b-col>
+                    <b-form-input v-model="dueDate" placeholder="MM-dd-YYYY"></b-form-input>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col>
+                    <b-form-checkbox v-model="recurring" value="true" unchecked-value="false"> Recurring
+                    </b-form-checkbox>
+                </b-col>
+                <b-col>
+                    <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="1">Weekly</b-form-radio>
+                    <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="2">Biweekly</b-form-radio>
+                </b-col>
+            </b-row>
+        </b-container>
     </b-card>
 </template>
 

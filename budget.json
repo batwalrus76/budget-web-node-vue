@@ -1,0 +1,484 @@
+{
+    "checkingAccount": {
+        "name": "Checking Account",
+        "balance": 1841.74,
+        "type": "Checking"
+    },
+    "savingsAccounts": {
+        "Holiday Savings": {
+            "name": "Holiday Savings",
+            "balance": 300.00,
+            "type": "Savings"
+        },
+        "Vacation Savings": {
+            "name": "Vacation Savings",
+            "balance": 30.00,
+            "type": "Savings"
+        },
+        "APLFCU Savings": {
+            "name": "APL FCU Savings",
+            "balance": 7660.07,
+            "type": "Savings"
+        }
+    },
+    "creditAccounts": {
+        "Lowe's Credit Card": {
+            "name": "Lowe's Credit Card",
+            "balance": 0.00,
+            "type": "Credit"
+        },
+        "Tesla Auto Loan": {
+            "name": "Tesla Auto Loan",
+            "balance": -32991.47,
+            "type": "Credit"
+        },
+        "Mini Auto Loan": {
+            "name": "Mini Auto Loan",
+            "balance": -28907.88,
+            "type": "Credit"
+        },
+        "Chase Credit Card": {
+            "name": "Chase Credit Card",
+            "balance": -8125.31,
+            "type": "Credit"
+        },
+        "Home Equity": {
+            "name": "Home Equity",
+            "balance": -18845.48,
+            "type": "Credit"
+        }
+    },
+    "pastUnreconciledBudgetItems": {
+    },
+    "curentPayPeriodBudgetState": {
+        "startDate": "2019-11-15",
+        "endDate": "2019-11-21"
+    },
+    "budgetItems": {
+        "Haircut": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -55.00,
+            "actualAmount": -55.00,
+            "due": {
+                "dueDate": "2019-12-01",
+                "amount": -55.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "Haircut",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Wells Fargo Mortgage": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -633.60,
+            "actualAmount": -633.60,
+            "due": {
+                "dueDate": "2019-11-11",
+                "amount": -633.6
+            },
+            "recurrence": "WEEKLY",
+            "name": "Wells Fargo Mortgage",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Mattress": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -50.00,
+            "actualAmount": -50.00,
+            "due": {
+                "dueDate": "2019-11-22",
+                "amount": -50.0
+            },
+            "recurrence": "WEEKLY",
+            "name": "Mattress",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "PetMegastore.co": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -170.00,
+            "actualAmount": -170.00,
+            "due": {
+                "dueDate": "2019-11-15",
+                "amount": -170.0
+            },
+            "recurrence": "ONETIME",
+            "name": "PetMegastore.co",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Chance's KMC FP ": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -75.00,
+            "actualAmount": -75.00,
+            "due": {
+                "dueDate": "2019-11-15",
+                "amount": -75.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "Chance's KMC FP ",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Trash Pickup": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -80.90,
+            "actualAmount": -80.90,
+            "due": {
+                "dueDate": "2019-12-01",
+                "amount": -80.9
+            },
+            "recurrence": "MONTHLY",
+            "name": "Trash Pickup",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Amazon Prime": {
+            "autopay": true,
+            "required": false,
+            "scheduledAmount": -119.00,
+            "actualAmount": -119.00,
+            "due": {
+                "dueDate": "2020-01-20",
+                "amount": -119.0
+            },
+            "recurrence": "YEARLY",
+            "name": "Amazon Prime",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "MPT": {
+            "autopay": true,
+            "required": false,
+            "scheduledAmount": -5.00,
+            "actualAmount": -5.00,
+            "due": {
+                "dueDate": "2019-11-21",
+                "amount": -5.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "MPT",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Xfer to Saving": {
+            "autopay": true,
+            "required": false,
+            "scheduledAmount": -640.00,
+            "actualAmount": -640.00,
+            "due": {
+                "dueDate": "2019-11-22",
+                "amount": -640.0
+            },
+            "recurrence": "BIWEEKLY",
+            "name": "Xfer to Saving",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Car Payment": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -293.00,
+            "actualAmount": -293.00,
+            "due": {
+                "dueDate": "2019-11-22",
+                "amount": -293.0
+            },
+            "recurrence": "BIWEEKLY",
+            "name": "Car Payment",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "E-Z Pass": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -35.00,
+            "actualAmount": -35.00,
+            "due": {
+                "dueDate": "2019-12-08",
+                "amount": -35.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "E-Z Pass",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Robin's Paycheck": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": 1757.89,
+            "actualAmount": 1757.89,
+            "due": {
+                "dueDate": "2019-11-29",
+                "amount": 1822.57
+            },
+            "recurrence": "BIWEEKLY",
+            "name": "Robin's Paycheck",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Google Fi": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -92.70,
+            "actualAmount": -9.72,
+            "due": {
+                "dueDate": "2019-11-12",
+                "amount": -92.72
+            },
+            "recurrence": "MONTHLY",
+            "name": "Google Fi",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "AES Private Loan": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -68.30,
+            "actualAmount": -68.30,
+            "due": {
+                "dueDate": "2019-11-24",
+                "amount": -66.24
+            },
+            "recurrence": "MONTHLY",
+            "name": "AES Private Loan",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "KMC FP Due": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -75.00,
+            "actualAmount": -75.00,
+            "due": {
+                "dueDate": "2019-12-01",
+                "amount": -75.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "KMC FP Due",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Gas Allowance": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -30.00,
+            "actualAmount": -30.00,
+            "due": {
+                "dueDate": "2019-11-16",
+                "amount": -30.0
+            },
+            "recurrence": "WEEKLY",
+            "name": "Gas Allowance",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Tesla Solar": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -120.00,
+            "actualAmount": -120.00,
+            "due": {
+                "dueDate": "2019-12-02",
+                "amount": -80.0
+            },
+            "recurrence": "MONTHLY",
+            "name": "Tesla Solar",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Cash on Hand": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -80.00,
+            "actualAmount": -80.00,
+            "due": {
+                "dueDate": "2019-11-15",
+                "amount": -80.0
+            },
+            "recurrence": "WEEKLY",
+            "name": "Cash on Hand",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Pet Allowance": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -138.75,
+            "actualAmount": -138.75,
+            "due": {
+                "dueDate": "2019-11-16",
+                "amount": -138.75
+            },
+            "recurrence": "WEEKLY",
+            "name": "Pet Allowance",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Tesla Auto Payment": {
+            "autopay": true,
+            "required": false,
+            "scheduledAmount": -300.00,
+            "actualAmount": -300.00,
+            "due": {
+                "dueDate": "2019-11-22",
+                "amount": -300.0
+            },
+            "recurrence": "BIWEEKLY",
+            "name": "Tesla Auto Payment",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Date night": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -40.00,
+            "actualAmount": -40.00,
+            "due": {
+                "dueDate": "2019-11-15",
+                "amount": -30.0
+            },
+            "recurrence": "WEEKLY",
+            "name": "Date night",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "EbaR": {
+            "autopay": false,
+            "required": false,
+            "scheduledAmount": -70.00,
+            "actualAmount": -0.00,
+            "due": {
+                "dueDate": "2019-11-15",
+                "amount": -70.0
+            },
+            "recurrence": "ONETIME",
+            "name": "EbaR",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Verizon Mobile": {
+            "autopay": true,
+            "required": false,
+            "scheduledAmount": -56.48,
+            "actualAmount": -56.48,
+            "due": {
+                "dueDate": "2019-11-11",
+                "amount": -56.48
+            },
+            "recurrence": "MONTHLY",
+            "name": "Verizon Mobile",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Food Allowance": {
+            "autopay": false,
+            "required": true,
+            "scheduledAmount": -160.00,
+            "actualAmount": -160.00,
+            "due": {
+                "dueDate": "2019-11-16",
+                "amount": -160.0
+            },
+            "recurrence": "WEEKLY",
+            "name": "Food Allowance",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Sofi Loan": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -728.94,
+            "actualAmount": -728.94,
+            "due": {
+                "dueDate": "2019-11-23",
+                "amount": -728.94
+            },
+            "recurrence": "MONTHLY",
+            "name": "Sofi Loan",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Delmarva Wi Fi": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -87.85,
+            "actualAmount": -87.85,
+            "due": {
+                "dueDate": "2019-12-15",
+                "amount": -87.85
+            },
+            "recurrence": "MONTHLY",
+            "name": "Delmarva Wi Fi",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Geic": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -167.12,
+            "actualAmount": -167.10,
+            "due": {
+                "dueDate": "2019-11-30",
+                "amount": -167.1
+            },
+            "recurrence": "MONTHLY",
+            "name": "Geic",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Delmarva Power": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -198.30,
+            "actualAmount": -198.30,
+            "due": {
+                "dueDate": "2019-12-15",
+                "amount": -161.36
+            },
+            "recurrence": "MONTHLY",
+            "name": "Delmarva Power",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        },
+        "Home Equity": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -271.40,
+            "actualAmount": -271.40,
+            "due": {
+                "dueDate": "2019-12-06",
+                "amount": -271.4
+            },
+            "recurrence": "MONTHLY",
+            "name": "Home Equity",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "Home Equity"
+        },
+        "Extra AES Payment": {
+            "autopay": true,
+            "required": true,
+            "scheduledAmount": -17.00,
+            "actualAmount": -17.00,
+            "due": {
+                "dueDate": "2019-11-22",
+                "amount": -17.0
+            },
+            "recurrence": "BIWEEKLY",
+            "name": "Extra AES Payment",
+            "transferToSavingsAccount": "null",
+            "transferToCreditAccount": "null"
+        }
+    },
+    "nonWorkProjects": [
+        "Finance",
+        "CASA"
+    ],
+    "calendarFile": "/Users/pascact1/Compiled.ics"
+}

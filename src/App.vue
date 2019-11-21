@@ -2,14 +2,14 @@
   <div id="app">
     <Header v-bind:currentStartDate="currentStartDate"
             v-bind:currentEndDate="currentEndDate"
-            v-bind:checkingAccount="checkingAccount"
+            v-bind:checkingAccounts="checkingAccounts"
             v-bind:savingsAccounts="savingsAccounts"
             v-bind:creditAccounts="creditAccounts"
             v-bind:budgetItems="budgetItems"
             v-on:previousWeek="previousWeek()"
             v-on:nextWeek="nextWeek()"
             @budgetFileUpload="budgetFileUpload" :budget_file_data="budget_data"></Header>
-    <router-view style="min-width: 100%"></router-view>
+    <router-view style="min-width: 100%; min-height: 100%" ></router-view>
   </div>
 </template>
 
@@ -29,7 +29,7 @@
         currentEndDate: this.formatCurrentEndDate(new Date()),
         currentTimePeriodData: {},
         budget_data: {},
-        checkingAccount: [{name:"",balance:0.0,type: "Checking"}],
+        checkingAccounts: [{name:"",balance:0.0,type: "Checking"}],
         savingsAccounts: [],
         creditAccounts: [],
         budgetItems: [],
@@ -122,7 +122,7 @@
         return this.formatDate(endDate);
       },
       budgetFileUpload: function(budget_file_data) {
-        this.checkingAccount = [budget_file_data.checkingAccount];
+        this.checkingAccounts = [ budget_file_data.checkingAccount ];
         this.savingsAccounts = budget_file_data.savingsAccounts;
         this.creditAccounts = budget_file_data.creditAccounts;
         this.budgetItems = budget_file_data.budgetItems;

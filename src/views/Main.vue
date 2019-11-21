@@ -2,31 +2,30 @@
     <b-container>
         <b-row>
             <b-col>
-                <b-container>
-                    <b-row>
-                        <CurrentBudgetPeriodTable v-bind:currentBudgetItems="budgetItems"
-                                                  style="min-width: 100%"
-                            ></CurrentBudgetPeriodTable>
-                    </b-row>
-                    <b-row>
-                        <EditCreateBudgetItem v-bind:selectedAccount="selectedAccount"
-                                              style="min-width: 100%">
-                        </EditCreateBudgetItem>
-                    </b-row>
-                </b-container>
+                <CurrentBudgetPeriodTable v-bind:currentBudgetItems="budgetItems"
+                                          style="min-width: 100%; min-height: 100%"></CurrentBudgetPeriodTable>
             </b-col>
             <b-col>
-                <AccountsCards v-bind:checkingAccount="checkingAccount"
+                <AccountsCards v-bind:checkingAccounts="checkingAccounts"
                                v-bind:savingsAccounts="savingsAccounts"
                                v-bind:creditAccounts="creditAccounts"></AccountsCards>
             </b-col>
         </b-row>
         <b-row>
             <b-col>
-                <PastDueBudgetItemsTable v-bind:pastDueBudgetItems="budgetItems"></PastDueBudgetItemsTable>
+                <PastDueBudgetItemsTable v-bind:pastDueBudgetItems="budgetItems" style="min-height: 100%">
+                </PastDueBudgetItemsTable>
             </b-col>
             <b-col>
-                <FutureBudgetItemsTable v-bind:futureBudgetItems="budgetItems"></FutureBudgetItemsTable>
+                <EditCreateBudgetItem v-bind:selectedAccount="selectedAccount"
+                                      style="min-width: 100%">
+                </EditCreateBudgetItem>
+            </b-col>
+        </b-row>
+        <b-row>
+            <b-col>
+                <FutureBudgetItemsTable v-bind:futureBudgetItems="budgetItems"
+                                        style="min-width: 100%; min-height: 100%"></FutureBudgetItemsTable>
             </b-col>
         </b-row>
     </b-container>
@@ -49,7 +48,7 @@
             PastDueBudgetItemsTable,
             FutureBudgetItemsTable
 		},
-		props: ['checkingAccount', 'savingsAccounts', 'creditAccounts', 'budgetItems'],
+		props: ['checkingAccounts', 'savingsAccounts', 'creditAccounts', 'budgetItems'],
 		data() {
 			return {
 				selectedAccount: null,

@@ -4,14 +4,14 @@
             tag="article"
             border-variant="dark"
     >
-        <b-table striped hover :items="checkingAccount" :fields="fields"></b-table>
+        <b-table striped hover :items="checkingAccounts" :fields="fields"></b-table>
     </b-card>
 </template>
 
 <script>
 	export default {
 		name: "CheckingAccountCard",
-		props: ['checkingAccount'],
+		props: ['checkingAccounts'],
 		data() {
 			return {
 				fields: ['name','balance']

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <CheckingAccountCard v-bind:checking-account="checkingAccount"></CheckingAccountCard>
-        <SavingsAccountsCard v-bind:savingsAccounts="savingsAccounts"></SavingsAccountsCard>
-        <CreditAccountsCard v-bind:credit-accounts="creditAccounts"></CreditAccountsCard>
+        <CheckingAccountCard v-bind:checkingAccounts="checkingAccounts"></CheckingAccountCard>
+            <SavingsAccountsCard v-bind:savingsAccounts="savingsAccounts"></SavingsAccountsCard>
+            <CreditAccountsCard v-bind:credit-accounts="creditAccounts"></CreditAccountsCard>
     </div>
 </template>
 
@@ -15,7 +15,7 @@
 	export default {
 		name: "AccountsCards",
         components: {CreditAccountsCard, SavingsAccountsCard, CheckingAccountCard},
-        props: ['checkingAccount', 'savingsAccounts', 'creditAccounts'],
+        props: ['checkingAccounts', 'savingsAccounts', 'creditAccounts'],
 		data() {
 			return {
 			}

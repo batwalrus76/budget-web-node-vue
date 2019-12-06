@@ -8,7 +8,7 @@
             <b-row>
                 <b-col>account:</b-col>
                 <b-col>
-                    <b-form-select v-model="selectedAccount" :options="accounts"
+                    <b-form-select v-model="selectedItem" :options="accounts"
                                       text-field="name" value-field="name"></b-form-select>
                 </b-col>
             </b-row>
@@ -30,8 +30,7 @@
                     </b-form-checkbox>
                 </b-col>
                 <b-col>
-                    <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="1">Weekly</b-form-radio>
-                    <b-form-radio v-model="recurringPeriod" name="recurring-radios" value="2">Biweekly</b-form-radio>
+                    <b-form-select v-model="recurringPeriod" :options="Object.keys(this.$store.state.BudgetingPeriod)" class="w-100"></b-form-select>
                 </b-col>
             </b-row>
         </b-container>
@@ -41,13 +40,13 @@
 <script>
 	export default {
 		name: "EditCreateBudgetItem",
-		props: ['accounts','selectedAccount'],
+		props: ['accounts','selectedItem'],
 		data () {
 			return {
 				dueDate: "11-01-2019",
 				amount: 0.0,
 				recurring: true,
-				recurringPeriod: 1
+				recurringPeriod: this.$store.state.BudgetingPeriod.Weekly
 			}
 		}
 	}

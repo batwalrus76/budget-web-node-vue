@@ -2,14 +2,17 @@
   <div id="app">
     <Header v-bind:currentStartDate="currentStartDate"
             v-bind:currentEndDate="currentEndDate"
-            v-bind:checkingAccounts="checkingAccounts"
-            v-bind:savingsAccounts="savingsAccounts"
-            v-bind:creditAccounts="creditAccounts"
-            v-bind:budgetItems="budgetItems"
+            v-bind:budgetItems="scheduledBudgetItems"
             v-on:previousWeek="previousWeek()"
             v-on:nextWeek="nextWeek()"
             @budgetFileUpload="budgetFileUpload" :budget_file_data="budget_data"></Header>
-    <router-view style="min-width: 100%; min-height: 100%" ></router-view>
+    <router-view style="min-width: 100%; min-height: 100%"
+                 v-bind:checkingAccounts="checkingAccounts"
+                 v-bind:savingsAccounts="savingsAccounts"
+                 v-bind:creditAccounts="creditAccounts"
+                 v-bind:startDate="startDate"
+                 v-bind:endDate="endDate"
+                 v-bind:scheduledBudgetItems="scheduledBudgetItems"></router-view>
   </div>
 </template>
 
@@ -24,22 +27,41 @@
     },
     data() {
       return {
-        currentDate: new Date(),
-        currentStartDate: this.formatCurrentStartDate(new Date()),
-        currentEndDate: this.formatCurrentEndDate(new Date()),
+        startDate: null,
+        endDate: null,
         currentTimePeriodData: {},
         budget_data: {},
-        checkingAccounts: [{name:"",balance:0.0,type: "Checking"}],
+        checkingAccounts: [],
         savingsAccounts: [],
         creditAccounts: [],
-        budgetItems: [],
+        scheduledBudgetItems: [],
       }
     },
     computed: {
-
+      currentDate: function(){
+        return new Date();
+      },
+      currentStartDate: function(){
+        let vm = this;
+        if(vm.startDate === undefined || vm.startDate === null){
+          vm.startDate = vm.calculateStartDate(vm.currentDate);
+        }
+        return this.formatDate(vm.startDate);
+      },
+      currentEndDate: function(){
+        let vm = this;
+        if(vm.endDate === undefined || vm.endDate === null){
+          vm.endDate = vm.calculateEndDate(vm.currentDate);
+        }
+        return this.formatDate(vm.endDate);
+      }
     },
     watch: {
-
+      currentDate: function(){
+        let vm = this;
+        vm.startDate = vm.calculateStartDate(vm.currentDate);
+        vm.endDate = vm.calculateEndDate(vm.currentDate);
+      }
     },
     methods: {
       formatDate(date) {
@@ -62,12 +84,18 @@
         this.updateCurrentStartEndDates();
       },
       updateCurrentStartEndDates: function(){
-        this.currentStartDate = this.formatCurrentStartDate(this.currentDate);
-        this.currentEndDate = this.formatCurrentEndDate(this.currentDate);
+        let vm = this;
+        vm.startDate = vm.calculateStartDate(vm.currentDate);
+        vm.currentStartDate = vm.formatDate(vm.currentDate);
+        vm.endDate = vm.calculateEndDate(vm.currentDate);
+        vm.currentEndDate = vm.formatDate(vm.currentDate);
       },
-      formatCurrentStartDate: function(currentDate) {
+      calculateStartDate: function(currentDate) {
         let previousFridayDiff = 0;
         switch (currentDate.getDay()) {
+          case 0:
+            previousFridayDiff = -2;
+            break;
           case 1:
             previousFridayDiff = -3;
             break;
@@ -86,16 +114,18 @@
           case 6:
             previousFridayDiff = -1;
             break;
-          case 7:
-            previousFridayDiff = -2;
-            break;
         }
-        const startDate = (new Date()).setDate(currentDate.getDate() + previousFridayDiff);
-        return this.formatDate(startDate);
+        let tempStartDate = new Date();
+        tempStartDate.setDate(currentDate.getDate() + previousFridayDiff);
+        tempStartDate.setHours(0,0,0);
+        return tempStartDate;
       },
-      formatCurrentEndDate: function(currentDate) {
+      calculateEndDate: function(currentDate) {
         let nextThursdayDiff = 0;
         switch (currentDate.getDay()) {
+          case 0:
+            nextThursdayDiff = 4;
+            break;
           case 1:
             nextThursdayDiff = 3;
             break;
@@ -114,18 +144,17 @@
           case 6:
             nextThursdayDiff = 5;
             break;
-          case 7:
-            nextThursdayDiff = 4;
-            break;
         }
-        const endDate = (new Date()).setDate(currentDate.getDate() + nextThursdayDiff);
-        return this.formatDate(endDate);
+        let tempEndDate = new Date();
+        tempEndDate.setDate(currentDate.getDate() + nextThursdayDiff);
+        tempEndDate.setHours(0,0,0);
+        return tempEndDate;
       },
       budgetFileUpload: function(budget_file_data) {
         this.checkingAccounts = [ budget_file_data.checkingAccount ];
         this.savingsAccounts = budget_file_data.savingsAccounts;
         this.creditAccounts = budget_file_data.creditAccounts;
-        this.budgetItems = budget_file_data.budgetItems;
+        this.scheduledBudgetItems = budget_file_data.budgetItems;
       },
     }
   };

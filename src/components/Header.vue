@@ -4,9 +4,10 @@
         <div class="px-2" style="color: #fff">Start Date: {{currentStartDate}}</div>
         <div class="px-2" style="color: #fff">End Date: {{currentEndDate}}</div>
         <b-button-group class="px-2">
-            <b-button variant="danger" v-on:click="$emit('previousWeek')">Previous Week</b-button>
-            <b-button variant="success" v-on:click="$emit('nextWeek')">Next Week</b-button>
+            <b-button variant="danger" v-on:click="$emit('previousWeek')">Previous</b-button>
+            <b-button variant="success" v-on:click="$emit('nextWeek')">Next</b-button>
         </b-button-group>
+        <b-form-select v-model="selected_period" :options="Object.keys(this.$store.state.BudgetingPeriod)" class="w-25"></b-form-select>
         <b-form-file
                 class="w-25"
                 v-model="budget_file"
@@ -23,13 +24,14 @@
 	export default {
 		name: "Header",
 		computed: {
-			...mapGetters(["currentUser", "isAuthenticated"])
+			...mapGetters(["currentUser", "isAuthenticated"]),
 		},
 		props: ['currentStartDate', 'currentEndDate'],
 		data() {
 			return {
-				budget_file: '',
-                budget_data: {}
+				budget_file: null,
+				budget_data: {},
+				selected_period: this.$store.state.BudgetingPeriod.Weekly
 			};
 		},
 		watch: {
